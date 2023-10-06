@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JoyitBeApplication {
+public class JoyitbeApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(JoyitBeApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(JoyitbeApplication.class, args);
+	}
 
 }

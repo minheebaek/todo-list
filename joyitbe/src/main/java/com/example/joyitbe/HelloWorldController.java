@@ -1,4 +1,5 @@
-package com.example.joyitbe.Controller;
+package com.example.joyitbe;
+
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
