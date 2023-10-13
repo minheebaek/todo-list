@@ -1,41 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
-import {useEffect, useState} from "react";
+import "./App.css";
+import Todo from "./Todo";
+import React, { useState } from "react";
+import { Container, List, Paper } from "@mui/material";
+import AddTodo from "./AddTodo";
 
-function App() {
-    const [message, setMessage] = useState([]);
 
-    useEffect(() => {
-        fetch("/hello")
-            .then((response) => {
-                return response.json();
-            })
-            .then(function (data) {
-                setMessage(data);
-            });
-    }, []);
+function App(){
+    
+    
 
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-                <ul>
-                    {message.map((text, index) => <li key={`${index}-${text}`}>{text}</li>)}
-                </ul>
-            </header>
-        </div>
-    );
+    const [items, setItems] = useState([]);
+
+    const addItem = (item) => {
+        item.id = "ID-" + items.length;
+        item.done = false;
+        //?
+        setItems([...items, item]);
+        console.log("items : ",items);
+    };
+    const editItem = () => {
+        setItems([...items]);
+    };
+    
+    const deleteItem = (item) => {
+        //삭제할 아이템 찾기
+        const newItems = items.filter(e => e.id !== item.id);
+        //삭제할 아이템을 제외한 아이템을 다시 배열에 저장
+        setItems([...newItems]);
+    }
+    
+    let todoItems =items.length > 0 && (
+        <Paper style={{margin: 16}}>
+            <List>
+            {items.map((item) => (
+                <Todo item={item} key ={item.id}  editItem={editItem} deleteItem={deleteItem}/>
+            ))}
+            </List>
+        </Paper>
+         );
+        return (<div className="App">
+            <Container maxWidth="md">
+                <AddTodo addItem={addItem} />
+                <div className="TodoList">{todoItems}</div>
+            </Container> 
+            </div>
+            );
 }
+
 
 export default App;
