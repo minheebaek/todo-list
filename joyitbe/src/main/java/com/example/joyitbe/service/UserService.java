@@ -1,5 +1,6 @@
 package com.example.joyitbe.service;
 
+
 import com.example.joyitbe.entity.UserEntity;
 import com.example.joyitbe.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -30,9 +31,9 @@ public class UserService {
         final UserEntity originalUser = userRepository.findByUsername(username);
 
         //matches 메서드를 이용해 패스워드가 같은지 확인
-        if(originalUser != null &&
-        encoder.matches(password,
-                originalUser.getPassword())){
+        if (originalUser != null &&
+                encoder.matches(password,
+                        originalUser.getPassword())) {
             return originalUser;
         }
         return null;
