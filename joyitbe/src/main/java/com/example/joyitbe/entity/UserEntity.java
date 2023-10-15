@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,7 +30,6 @@ public class UserEntity {
     private String role; //사용자 롤, 예:어드민, 일반 사용자
 
     private String authProvider; //이후 OAuth에서 사용할 유저정보 제공자 : github
-
 
 
 }

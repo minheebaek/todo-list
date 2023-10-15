@@ -13,6 +13,7 @@ import {
  } from "@mui/material";
 import AddTodo from "./AddTodo";
 import {call, signout} from "./service/Apiservice";
+//import "./JC_Header.css";
 
 
 function App(){
@@ -109,16 +110,6 @@ function App(){
             return <div className="App">{content}</div>;
             }
     
-         
-//         return (<div className="App">
-//             {navigationBar}{/* 네비게이션 바 렌더링 */}
-//             <Container maxWidth="md">
-//                 <AddTodo addItem={addItem} />
-//                 <div className="TodoList">{todoItems}</div>
-//             </Container> 
-//             </div>
-//             );
-// }
 
 
 export default App;

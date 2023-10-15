@@ -27,7 +27,7 @@ return (
             <Grid container spacing={2}>
                 <Grid item xs = {12}>
                     <Typography component="hi" variant="h5">
-                        계정 생성
+                        회원가입
                     </Typography>
 
                 </Grid>
@@ -61,14 +61,14 @@ return (
                         variant="contained"
                         color="primary"
                         >
-                            계정생성
+                            회원가입
                         </Button>
                 </Grid>
             </Grid>
             <Grid container justify="flex-end">
                 <Grid item>
                 <Link to = "/login" variant="body2">
-                    이미 계정이 있습니까? 그럼 로그인 하세요.
+                    로그인
                 </Link>
                 </Grid>
             </Grid>
